@@ -80,6 +80,8 @@ Keep infrastructure, accounts, data, and decisions under the family’s control.
 
 Maintain the documentation, access, and recovery paths needed to understand, repair, modify, or replace the system. Independence includes being able to change providers and continue the work.
 
+Python services and project tools use a project-local virtual environment with declared runtime requirements. Recreate that environment on each host using a verified interpreter; migrate data and source separately rather than relying on whichever Python binary happens to be installed.
+
 **Resources are a design constraint**
 
 AI agents are responsible for matching the scope and complexity of their work to the resources currently funded and authorized.

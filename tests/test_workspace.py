@@ -146,6 +146,16 @@ class WorkspaceTest(unittest.TestCase):
         db.close()
         self.assertEqual(self.request('/api/access', {'token': token})[0], 401)
 
+    def test_recovery_does_not_revive_login_links(self):
+        create_access_link(self.database, self.server.server_port)
+        snapshot = self.root / 'with-link.sqlite3'
+        backup(self.database, snapshot)
+        restore(snapshot, self.root / 'safe-recovery')
+        db = connect(self.root / 'safe-recovery' / 'family.sqlite3')
+        self.assertIsNone(db.execute("SELECT value FROM settings WHERE key='access_link'").fetchone())
+        self.assertIsNotNone(db.execute("SELECT value FROM settings WHERE key='password'").fetchone())
+        db.close()
+
 
 if __name__ == '__main__':
     unittest.main()
