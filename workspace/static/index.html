@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A private place for our family's plans, wishes, and little wins.">
+  <title>Family desk · GRIME</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="masthead"><a class="brand" href="/" aria-label="Family desk home"><span class="mark">g.</span> GRIME <span class="brand-detail">/ family desk</span></a><div><button id="account" class="quiet" hidden>Set password</button> <button id="logout" class="quiet" hidden>Lock workspace ↗</button></div></header>
+  <main>
+    <section id="login-view" class="welcome">
+      <div><p class="eyebrow">OUR OWN LITTLE CORNER</p><h1>A little less<br>to carry.</h1><p class="intro">Plans, wishes, and the things we do for each other.<br>All together, in one place.</p><div class="welcome-art" aria-hidden="true"><span class="tile one">make room</span><span class="tile two">for what matters.</span><span class="sun">✳</span></div></div>
+      <form id="login-form" class="login-card"><span class="eyebrow">WELCOME HOME</span><h2>Open the family desk</h2><label for="password">Workspace password</label><input id="password" name="password" type="password" autocomplete="current-password" required minlength="12" maxlength="256"><p id="login-error" class="error" role="alert"></p><button class="primary" type="submit">Come on in <span>↗</span></button><p class="fine">Your family’s shared space, on this computer.</p></form>
+    </section>
+    <section id="desk" hidden>
+      <div class="heading"><div><p id="today" class="eyebrow"></p><h1>Room for what matters.</h1><p class="intro">One place to ask, plan, and move things forward.</p></div><button id="new-task" class="primary">＋ Add a request</button></div>
+      <div class="stats" aria-label="Task summary"><div><span id="inbox-count" class="number">0</span><span>new possibilities</span></div><div><span id="active-count" class="number">0</span><span>in motion</span></div><div><span id="done-count" class="number">0</span><span>little wins</span></div><p>Useful work.<br>More time together.</p></div>
+      <div id="notice" class="error" role="alert"></div>
+      <div class="workspace-grid"><section class="tasks-panel"><div class="section-heading"><h2>Our requests</h2><span class="caption">Small steps count.</span></div><nav class="filters" aria-label="Filter requests"><button data-filter="open" aria-pressed="true">Open</button><button data-filter="done" aria-pressed="false">Completed</button><button data-filter="all" aria-pressed="false">Everything</button></nav><div id="tasks" class="cards"></div></section>
+      <aside><div class="section-heading"><h2>On our minds</h2><button id="new-note" class="quiet">＋ Note</button></div><p class="caption note-intro">Ideas, reminders, and things worth keeping.</p><div id="notes" class="notes"></div><div class="gentle-reminder"><span>↗</span><p>Start with one thing.<br>What would make this week easier?</p></div></aside></div>
+      <section class="project-panel"><div class="section-heading"><h2>Project progress</h2><button id="refresh-project" class="quiet">Refresh ↻</button></div><p class="caption">Decisions and work recorded by our project agents.</p><div id="project-records" class="project-records"></div><div id="project-jobs" class="cards"></div></section>
+    </section>
+  </main>
+  <footer><span>THE GRIME FAMILY PARTNERSHIP</span><span>Built around the people.</span></footer>
+  <dialog id="editor"><form id="item-form"><div class="section-heading"><h2 id="editor-title">Add a request</h2><button id="close-editor" type="button" class="quiet" aria-label="Close editor">✕</button></div><input type="hidden" name="id"><input type="hidden" name="kind" value="task"><label for="item-title">What’s on your mind?</label><input id="item-title" name="title" maxlength="160" required placeholder="A small thing that would help…"><label for="item-body">A little more detail <span class="optional">(optional)</span></label><textarea id="item-body" name="body" maxlength="10000" rows="5" placeholder="What would a good result look like?"></textarea><label for="item-owner">Who’s this for? <span class="optional">(optional)</span></label><input id="item-owner" name="owner" maxlength="80" placeholder="A name, or everyone"><div id="status-field"><label for="item-status">Where are we?</label><select id="item-status" name="status"><option value="inbox">Inbox · a new request</option><option value="next">Up next · ready to start</option><option value="active">In progress · working on it</option><option value="done">Done · a little win</option></select></div><p id="editor-error" class="error" role="alert"></p><div class="dialog-actions"><button id="cancel-editor" type="button" class="quiet">Cancel</button><button class="primary" type="submit">Save</button></div></form></dialog>
+  <dialog id="password-editor"><form id="password-form"><h2>Set your workspace password</h2><p class="fine">Use this password to come back after your access link has been used.</p><label for="new-password">New password · at least 12 characters</label><input id="new-password" type="password" autocomplete="new-password" minlength="12" maxlength="256" required><label for="repeat-password">Repeat password</label><input id="repeat-password" type="password" autocomplete="new-password" minlength="12" maxlength="256" required><p id="password-error" class="error" role="alert"></p><div class="dialog-actions"><button id="cancel-password" type="button" class="quiet">Cancel</button><button type="submit" class="primary">Save password</button></div></form></dialog>
+</body>
+</html>

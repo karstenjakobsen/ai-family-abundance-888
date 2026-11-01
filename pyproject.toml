@@ -1,0 +1,6 @@
+[project]
+name = "grime-family-desk"
+version = "0.1.0"
+description = "Private family workspace and portable shared agent memory"
+requires-python = ">=3.12,<3.15"
+dependencies = []
