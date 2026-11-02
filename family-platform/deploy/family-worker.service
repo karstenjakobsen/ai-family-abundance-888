@@ -1,0 +1,20 @@
+[Unit]
+Description=Family workspace approved agent job dispatcher
+After=network-online.target family-workspace.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/family-platform
+EnvironmentFile=/etc/family-workspace.env
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/opt/family-platform/.venv/bin/family-workspace worker
+Restart=always
+RestartSec=10
+UMask=0077
+TimeoutStopSec=15
+KillMode=control-group
+
+[Install]
+WantedBy=multi-user.target

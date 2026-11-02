@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@xterm/addon-fit": "0.11.0",
+    "@xterm/xterm": "6.0.0"
+  },
+  "name": "family-workspace-terminal-assets",
+  "private": true,
+  "description": "Reproducible local terminal assets for the self-hosted workspace tool",
+  "scripts": {
+    "vendor": "python3 tools/vendor.py"
+  }
+}

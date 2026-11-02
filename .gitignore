@@ -1,8 +1,0 @@
-__pycache__/
-.venv/
-*.pyc
-.family-data/
-backups/
-.env
-.env.*
-!.env.example

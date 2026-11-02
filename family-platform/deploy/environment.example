@@ -1,0 +1,13 @@
+# Root-owned configuration: /etc/family-workspace.env, mode 0600.
+FAMILY_STATE=/var/lib/family-workspace
+FAMILY_ORIGIN=https://family.example.com
+FAMILY_GUARD_MODE=observe
+# Optional human-issued standing authorization for bounded incident investigation.
+# 0 disables model-driven investigations; the deterministic guardian still runs.
+FAMILY_DEFENDER_ALLOWANCE=0
+# Comma-separated stable operator/bastion CIDRs; mandatory before contain mode.
+FAMILY_RECOVERY_NETWORKS=
+FAMILY_TERMINAL_COMMAND='["codex"]'
+# Unattended jobs have explicit adult approval. This grants host-wide OS access
+# on this family's isolated VPS; do not use on a shared multi-family host.
+FAMILY_JOB_COMMAND='["codex","exec","--json","--skip-git-repo-check","--sandbox","danger-full-access","-"]'

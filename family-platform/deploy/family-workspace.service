@@ -1,0 +1,19 @@
+[Unit]
+Description=Family workspace browser, agent terminal and guardian
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/family-platform
+EnvironmentFile=/etc/family-workspace.env
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/opt/family-platform/.venv/bin/family-workspace serve
+Restart=always
+RestartSec=5
+UMask=0077
+TimeoutStopSec=15
+
+[Install]
+WantedBy=multi-user.target
